@@ -1,0 +1,279 @@
+/*----------------------------------------------------------------------*/
+/* #Dark Theme
+/*----------------------------------------------------------------------*/
+@import '../variables';
+@import '../mixins';
+
+
+$bg-color: #191919;
+$fixed-bg-color: #121212;
+
+$text-color: #9e9e9e;
+$text-darker: darken($text-color, 10%);
+$text-lighter: lighten($text-color, 10%);
+$heading-color: lighten($text-color, 5%);
+
+$link-color: $text-lighter;
+
+$border-color: rgba(255,255,255,.1);
+$border-color-darker: rgba(255,255,255,.07);
+$border-color-lighter: rgba(255,255,255,.15);
+
+$label-color: $primary-color;
+$nav-menu-color: $link-color;
+
+body {
+	color: $text-color;
+	background-color: $bg-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $text-lighter;
+}
+
+body.theme-dark {
+	background-color: $bg-color;
+
+	#page {
+		background-color: $bg-color;
+	}
+	
+	&.l-fixed {
+		background-color: $fixed-bg-color;
+	}
+
+
+	/* ##Base
+	---------------------------------*/
+	code,
+	pre {
+		color: $text-color;
+		background-color: rgba(255,255,255,.05);
+	}
+	ins,
+	mark {
+		background: $border-color;
+	    color: $text-lighter;
+	}
+	
+	a {
+		color: $link-color;
+		&:hover {
+			color: darken($link-color, 20%);
+		}
+		&[href="#"],
+		&.is-disabled {
+			color: $text-darker;
+		}
+	}
+	table {
+		caption {
+			color: $text-lighter;
+			background-color: $border-color;
+		}
+		th,
+		td {
+			border-top-color: $border-color;
+		}
+		thead th { 
+			border-bottom-color: $border-color;
+		}
+		tbody + tbody {
+			border-top-color: $border-color;
+		}
+		.table {
+			background-color: transparent;
+		}
+	}
+	.table-bordered {
+		border-color: $border-color;
+	}
+	.table-striped {
+		tbody tr:nth-of-type(odd) {
+			background-color: $border-color;
+		}
+	}
+	/* ##Header
+	---------------------------------*/
+	.site-branding {
+		a {
+			color: #fff;
+			background-color: $primary-color;
+		}
+		.site-description {
+			color: $text-darker;
+		}
+	}
+	
+	// make it better priority
+	&.theme-customize .main-navigation {
+		ul {
+			a {
+				color: $nav-menu-color;
+				&:hover {
+					color: darken($nav-menu-color, 10%);
+				}
+			}
+		}
+	}
+	
+	/* ##Article
+	---------------------------------*/
+	.Article {
+		&:not(:first-child) {
+			&:before {
+				background-color: rgba(255,255,255,.1);
+			}
+		}
+		@include e(title) {
+			color: $heading-color;
+			a {
+				color: $heading-color;
+				&:hover {
+					color: $heading-color;
+					span {
+						box-shadow: inset 0 -2px 0 rgba($primary-color, 0.4);
+					}
+				}
+				&:visited {
+					// color: #bdbdbd;
+				}
+				span {
+				    box-shadow: inset 0 -2px 0 transparent;
+				}
+			}
+		}
+
+		@include e(top-meta) {
+			color: $text-darker;
+		}
+
+		@include e(excerpt) {
+			color: $text-darker;
+		}
+		
+		@include e(meta) {
+			color: $text-darker;
+			a {
+				color: $text-color;
+				&:hover {
+					color: $link-color;
+				}
+			}
+			i {
+				color: $text-lighter;
+			}
+		}
+
+	}
+	
+	/* ##Blockquote post format
+	---------------------------------*/
+	.posts-loop .Article.format-quote {
+		.Article__content {
+			> blockquote:first-child {
+				color: $text-darker;
+			}
+		}
+	}
+
+	.sticky-mark {
+		background-color: $label-color;
+		&:before {
+			border-color: $label-color transparent transparent transparent;
+		}
+		&:after {
+			border-color: transparent $label-color transparent transparent;
+		}
+	}
+
+	/* ##Pagination
+	---------------------------------*/
+	.Pagination__prev,
+	.Pagination__next {
+		border-color: $border-color;
+		border-width: 2px;
+	}
+
+
+	/* ##Footer
+	---------------------------------*/
+	.site-footer {
+		color: $text-darker;
+		&:before {
+			background-color: $border-color;
+		}
+		.meta {
+			color: $text-darker;
+		}
+	}
+
+	/* ##Comments
+	---------------------------------*/
+	.Comments-area {
+		@include e(title) {
+			color: $heading-color;
+			&:before {
+				background-color: rgba(255,255,255,.1);
+			}
+			&:after {
+				background-color: rgba(255,255,255,.1);
+			}
+		}
+	}
+	.Comment {
+		@include e(media) {
+			background-color: rgba(255,255,255,.05);
+		}
+
+		@include e(body) {
+			border-bottom: 1px solid rgba(255,255,255,.05);
+		}
+		@include e(username) {
+			color: $text-color;
+		}
+		@include e(date) {
+			color: $text-darker;
+		}
+	}
+	.comment-form {
+		.logged-in-as {
+			color: $text-darker;
+		}
+
+		&__author,
+		&__email,
+		&__url, {
+			input {
+				border-color: rgba(255,255,255,.05);
+				background-color: rgba(255,255,255,.05);
+			}
+		}
+
+		&__comment {
+			textarea {
+				background-color: rgba(255,255,255,.05);
+			}
+		}
+
+		&__submit {
+			text-align: right;
+		}
+	}
+
+	.Alert {
+		color: $text-color;
+		background-color: rgba(255,255,255,.05);
+		@include m(warning) {
+			color: $text-color;
+			background-color: rgba(255,255,255,.05);
+		}
+	}
+	
+}
+
+
+
+
+
+

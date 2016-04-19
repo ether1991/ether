@@ -1,0 +1,91 @@
+/*----------------------------------------------------------------------*/
+/* #Navigation
+/*----------------------------------------------------------------------*/
+.site-branding {
+	position: relative;
+	text-align: center;
+	margin-bottom: 2*0.625rem;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	font-family: "Open Sans", arial, sans-serif;
+	letter-spacing: .1em;
+	.site-title {
+		margin: 0;
+		font-size: 0.875rem;
+	}
+	.site-logo {
+		margin: 0 auto;
+		width: 90px;
+		height: 90px;
+		border-radius: 45px;
+		background-color: $border-color-darker;
+		@include fullbg;
+	}
+	.site-description {
+		color: $text-helper;
+		font-size: 0.8125rem;
+		margin: 0.625rem 0 0;
+	}
+	a {
+		display: inline-block;
+		color: #fff !important;
+		font-weight: bolder;
+		background-color: $primary-color;
+		line-height: 3*0.625rem;
+		height: 3*0.625rem;
+		padding: 0 0.625rem;
+		transition: all 0.3s ease-out;
+		&:hover {
+			color: #fff !important;
+			padding: 0 1rem;
+		}
+	}
+}
+
+.main-navigation {
+	text-align: center;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 1rem;
+		li {
+			display: inline-block;
+			margin-left: 0.625rem / 2;
+			margin-right: 0.625rem / 2;
+		}
+
+		a {
+			display: block;
+			color: $nav-menu-color;
+			font-size: 1rem;
+			line-height: 2*0.625rem;
+			padding: 0 0.625rem;
+		}
+	}
+}
+
+.site-footer {
+	position: relative;
+	text-align: center;
+	margin-top: 4*0.625rem;
+	padding-top: 2*0.625rem;
+	color: $text-helper;
+	&:before {
+		content: '';
+		width: 100px;
+		height: 1px;
+		background-color: $border-color-lighter;
+		position: absolute;
+		top: 0;
+		left: calc(50% - 50px);
+	}
+	.meta {
+		color: $text-helper;
+		font-size: 0.8125rem;
+		margin: 0.5*0.625rem 0;
+	}
+}
+
+
+

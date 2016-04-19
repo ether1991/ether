@@ -1,0 +1,60 @@
+/*----------------------------------------------------------------------*/
+/* #Pages
+/*----------------------------------------------------------------------*/
+/* ##Archive
+---------------------------------*/
+.archive-header {
+	text-align: center;
+	margin-top: 6*0.625rem;
+	.archive-title {
+		font-size: 1.8em;
+		line-height: 1;
+		&:before {
+			content: '#';
+		}
+	}
+	.taxonomy-description {
+		font-size: 1em;
+		color: $text-helper;
+		margin: 0;
+		p {
+			margin: 0;
+		}
+	}
+}
+
+
+
+
+/* ##404
+---------------------------------*/
+.page-404 {
+	position: relative;
+	text-align: center;
+	margin-top: 6*0.625rem;
+	.page-404-title {
+		font-size: 8*0.625rem;
+    	line-height: 1;
+    	font-weight: normal;
+    	color: $text-lighter;
+    	margin: 0;
+    	font-family: 'open sans', Arial, sans-serif;
+	}
+	.page-404-divide {
+		margin-top: -4px;
+    	margin-bottom: 24px;
+		span {
+			display: inline-block;
+			width: 110px;
+			height: 1px;
+			background-color: $border-color;
+		}
+	}
+	.page-404-desc {
+		font-size: 1.125rem;
+    	color: $text-helper;
+	}
+}
+
+
+

@@ -1,0 +1,33 @@
+$primary-color: #F03838;
+
+$base-font-size: 16px; // 0.625rem 10px; 0.875rem 14px; 0.75rem 12px; 0.8125rem 13px;
+$site-width: 1170px;
+$content-width: 700px;
+
+// Primary color scheme
+$bg-color: #fff;
+$fixed-bg-color: #f7f7f7;
+
+$text-color: #424242;
+$text-darker: #212121;
+$text-lighter: #616161;
+$text-helper: #9e9e9e;
+$heading-color: lighten($text-color, 5%);
+
+$link-color: $primary-color;
+
+$border-color: #e0e0e0;
+$border-color-darker: #ccc;
+$border-color-lighter: #eee;
+
+$label-color: $primary-color;
+$nav-menu-color: $primary-color;
+
+
+$base-margin-vertical: 3*0.625rem;
+$base-margin-horizontal: 2*0.625rem;
+$base-heading-margin-top: 2*0.625rem;
+$base-blockquote-border: $primary-color;
+
+$link-color: $primary-color;
+$base-hr-border: #E0E0E0;

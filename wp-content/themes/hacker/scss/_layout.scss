@@ -1,0 +1,31 @@
+/*----------------------------------------------------------------------*/
+/* #Layout
+/*----------------------------------------------------------------------*/
+#page {
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+#primary {
+	max-width: $content-width + 20px;
+	width: 100%;
+	padding: 80px 10px 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body.l-fixed {
+	background-color: $fixed-bg-color;
+	#page {
+		max-width: $site-width;
+		background-color: #fff;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+
+
+
